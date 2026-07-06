@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<package version="1.0">
+    <description>LDAP directory</description>
+    <author mailto="maxim.menshikov@interpretica.io" />
+    <session track_conf="silent">
+        <prologue><script name="prologue"><objective>Prepare the LDAP group.</objective></script></prologue>
+        <epilogue><script name="epilogue"><objective>Finalize the LDAP group.</objective></script></epilogue>
+        <run><script name="probe"><objective>Anonymous bind and search against a directory.</objective></script></run>
+        <run><script name="audit"><objective>Read the LDAP security posture and gate on it.</objective></script></run>
+    </session>
+</package>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<package version="1.0">
+    <description>tsf-ldap demonstration suite</description>
+    <!-- @page ldap-ts LDAP Suite
+          @objective Exercise tsf-ldap against a directory reachable from
+                     the agent the suite runs on.
+          @par Test Groups:
+          - @ref ldap-probe - Anonymous bind and search
+          - @ref ldap-audit - The LDAP security posture, gated
+          @par Notes:
+          - The directory is supplied via env TSF_LDAP_URI (ldap:// or
+            ldaps://); with none set the tests skip cleanly.
+          - The audit binds and reads only; authorized use only.
+    -->
+    <author mailto="maxim.menshikov@interpretica.io" />
+    <session track_conf="silent">
+        <prologue><script name="prologue"><objective>Prepare the test environment.</objective></script></prologue>
+        <epilogue><script name="epilogue"><objective>Finalize the test environment.</objective></script></epilogue>
+        <run><package name="ldap" /></run>
+    </session>
+</package>

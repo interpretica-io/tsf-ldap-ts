@@ -1,0 +1,15 @@
+/** @mainpage
+
+This suite exercises tsf-ldap - binding to and querying an LDAP
+directory from the Test Agent it runs on, over OpenLDAP:
+
+- @ref ldap-probe - an anonymous bind, a search of a base (or the root
+  DSE), and optionally a simple bind with configured credentials;
+- @ref ldap-audit - the directory read as a security posture through
+  tsf-cybersec (anonymous bind accepted, a cleartext bind over ldap://
+  with no TLS, an anonymous client reading entries), gated on HIGH.
+
+The directory is the test's to supply (env TSF_LDAP_URI); with none
+configured the tests skip. It binds and reads only - authorized use.
+
+*/
